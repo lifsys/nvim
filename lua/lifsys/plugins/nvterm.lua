@@ -1,6 +1,7 @@
--- return {
---   "NvChad/nvterm",
---   config = function()
---     require("nvterm").setup()
---   end,
--- }
+return {
+  'NvChad/nvterm',
+  config = function()
+    require('nvterm').setup()
+  end,
+}
+
