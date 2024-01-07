@@ -82,6 +82,12 @@ return {
       on_attach = on_attach,
     })
 
+    -- configure typescript server with plugin
+    lspconfig["gopls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
     -- configure css server
     lspconfig["cssls"].setup({
       capabilities = capabilities,
