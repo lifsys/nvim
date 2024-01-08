@@ -58,5 +58,29 @@ return {
     -- keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
     -- keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
     -- keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+
+  local harpoon = require('harpoon')
+  harpoon:setup({})
+
+  -- basic telescope configuration
+  local conf = require("telescope.config").values
+  local function toggle_telescope(harpoon_files)
+      local file_paths = {}
+      for _, item in ipairs(harpoon_files.items) do
+          table.insert(file_paths, item.value)
+      end
+
+      require("telescope.pickers").new({}, {
+          prompt_title = "Harpoon",
+          finder = require("telescope.finders").new_table({
+              results = file_paths,
+          }),
+          previewer = conf.file_previewer({}),
+          sorter = conf.generic_sorter({}),
+      }):find()
+  end
+
+  vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
+      { desc = "Open harpoon window" })
   end,
 }
