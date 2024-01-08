@@ -6,7 +6,7 @@ return {
     require('harpoon').setup {} -- Setup Harpoon with default or custom settings
     local harpoon = require 'harpoon'
     -- Key mappings
-    vim.keymap.set('n', '†', function()
+    vim.keymap.set('n', '<F8>', function()
       harpoon:list():append()
     end)
     vim.keymap.set('n', '<C-e>', function()
@@ -35,4 +35,3 @@ return {
     end)
   end,
 }
-
