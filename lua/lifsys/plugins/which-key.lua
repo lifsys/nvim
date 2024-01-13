@@ -30,10 +30,8 @@ return {
       ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
       ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
       ['<C-\\>'] = { '<cmd>NvimTreeToggle<cr>', 'Explorer' },
-      ['<C-S-T>'] = { "<cmd>lua require('nvterm.terminal').toggle('float')<cr>", 'Floating Terminal' },
-      ['<C-S-H>'] = { "<cmd>lua require('nvterm.terminal').toggle('horizontal')<cr>", 'Horizontal Terminal' },
-      ['<C-S-V>'] = { "<cmd>lua require('nvterm.terminal').toggle('vertical')<cr>", 'Vertical Terminal' },
-      ['<C-?>'] = { '<cmd>ChatGPT<cr>', 'ChatGPT' },
+      ['<S-T>'] = { "<cmd>lua require('nvterm.terminal').toggle('float')<cr>", 'Floating Terminal' },
+      ['?'] = { '<cmd>ChatGPT<cr>', 'ChatGPT' },
     }, { mode = 'n' })
     require('which-key').register({
       ['<leader>'] = { name = 'VISUAL <leader>' },
