@@ -7,6 +7,7 @@ return {
 
     conform.setup {
       formatters_by_ft = {
+        go = { 'gofmt' }, -- add gofmt for Go files
         javascript = { 'prettier' },
         typescript = { 'prettier' },
         javascriptreact = { 'prettier' },
@@ -20,7 +21,6 @@ return {
         graphql = { 'prettier' },
         lua = { 'stylua' },
         python = { 'isort', 'black' },
-        go = { 'gofmt' },
       },
       format_on_save = {
         lsp_fallback = true,
