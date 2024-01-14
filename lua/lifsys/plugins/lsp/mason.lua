@@ -27,6 +27,7 @@ return {
     mason_lspconfig.setup {
       -- list of servers for mason to install
       ensure_installed = {
+        'gopls',
         'tsserver',
         'html',
         'cssls',
@@ -52,6 +53,7 @@ return {
         'pylint', -- python linter
         'eslint_d',
         'rust-analyzer',
+        'gopls',
       },
     }
   end,
